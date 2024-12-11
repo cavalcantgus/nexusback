@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ./  # Diretório onde está o Dockerfile
+      dockerfile: dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./uploads:/app/uploads
+      - C:/Users/MARCOS/Downloads:/app/downloads
+    restart: unless-stopped
+    container_name: nexus-backend
